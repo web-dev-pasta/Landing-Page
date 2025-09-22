@@ -10,6 +10,7 @@ import ScrollVelocity from "@/components/scroll-velocity";
 function Video() {
   const videoSection = useRef(null);
   const video = useRef(null);
+  const videoContainer = useRef(null);
   const iconRefs = useRef([]);
 
   useGSAP(() => {
@@ -43,7 +44,41 @@ function Video() {
         end: "top 60%",
       },
     });
+    gsap.to(video.current, {
+      scale: 0.94,
+      borderBottomRightRadius: "30px",
+      borderBottomLeftRadius: "30px",
+      scrollTrigger: {
+        trigger: videoSection.current,
+        start: "bottom 90%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+    gsap.to(video.current, {
+      y: -100,
+      scrollTrigger: {
+        trigger: videoSection.current,
+        start: "bottom 75%",
+        end: "bottom 10%",
+        scrub: true,
+      },
+    });
+    gsap.to(videoSection.current, {
+      backgroundColor: `#232323`,
+      duration: 1e-9,
+      ease: "none",
+      scrollTrigger: {
+        trigger: videoSection.current,
+        start: "top top",
+        onEnter: () =>
+          gsap.set(videoSection.current, { backgroundColor: "#232323" }),
+        onLeaveBack: () =>
+          gsap.set(videoSection.current, { backgroundColor: "#F7F6F1" }),
+      },
+    });
   });
+
   const icons = [{ label: <TbHome2 /> }, { label: <HiOutlineKey /> }];
   return (
     <section
@@ -65,31 +100,33 @@ function Video() {
           );
         })}
       </div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-1/2 z-10">
-        <ScrollVelocity
-          texts={[
-            "interest free ● installment 0% ● starts with an initial payment from $25,000 ●",
-          ]}
-          velocity={75}
-          className="custom-scroll-text text-white font-semibold"
-        />
+      <div className="video w-full h-full relative">
+        <video
+          id="test"
+          // autoPlay
+          muted
+          // loop
+          // playsInline
+          className="w-screen h-screen object-cover -z-10 pointer-events-none"
+          ref={video}
+          style={{
+            "--radius": "20px",
+            clipPath: "inset(30% round var(--radius))",
+          }}
+        >
+          <source src="/assets/videos/hero.mp4" type="video/mp4" />
+          Your Browser Does Not Support This Vdieo
+        </video>
+        <div className="absolute top-1/2 left-1/2 transform -translate-1/2 z-10">
+          <ScrollVelocity
+            texts={[
+              "interest free ● installment 0% ● starts with an initial payment from $25,000 ●",
+            ]}
+            velocity={75}
+            className="custom-scroll-text text-white font-semibold"
+          />
+        </div>
       </div>
-      <video
-        id="test"
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-screen h-screen object-cover -z-10"
-        ref={video}
-        style={{
-          "--radius": "20px",
-          clipPath: "inset(30% round var(--radius))",
-        }}
-      >
-        <source src="/assets/videos/hero.mp4" type="video/mp4" />
-        Your Browser Does Not Support This Vdieo
-      </video>
     </section>
   );
 }

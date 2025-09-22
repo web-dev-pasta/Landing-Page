@@ -6,12 +6,14 @@ import Hero from "@/sections/Hero";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 import ReactLenis from "lenis/react";
 import Video from "@/sections/Video";
+import Portfolio from "@/sections/Portfolio";
 export default function Home() {
   return (
     <ReactLenis root>
       <Hero />
       <Video />
-      {/* <section className="min-h-screen"></section> */}
+      <Portfolio />
+      <section className="min-h-screen"></section>
     </ReactLenis>
   );
 }
