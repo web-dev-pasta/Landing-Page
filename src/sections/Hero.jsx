@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -128,6 +128,14 @@ function Hero() {
           className="w-full h-full object-cover"
           style={{ objectPosition: `28%` }}
           alt="hero_img"
+        />
+      </div>
+      <div className="absolute inset-0 -z-10 overflow-hidden hidden lg:block">
+        <img
+          ref={heroImageMobile}
+          src="/assets/images/bg-2.svg"
+          className="w-full h-full object-cover"
+          alt="hero_bg_pattern"
         />
       </div>
       <div className="left flex-1 flex flex-col justify-between p-5 ">
