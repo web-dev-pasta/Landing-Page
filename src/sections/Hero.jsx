@@ -233,7 +233,7 @@ function Hero() {
                 alt="office"
                 className="rounded-full"
               />
-              <span className="absolute top-[-5px] right-[-3px] bg-[#DAE5EA] rounded-full p-1 transform ">
+              <span className="absolute top-[40px] right-[40px] bg-[#DAE5EA] rounded-full p-1 transform ">
                 <RxArrowTopRight className="text-xl" />
               </span>
             </div>

@@ -1,11 +1,9 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   theme: {
     extend: {
-      screens: {
-        mobile: { max: "767px" },
+      fontFamily: {
+        montserrat: ["Montserrat", "Helvetica Neue", "sans-serif"],
       },
     },
   },
-  plugins: [],
 };

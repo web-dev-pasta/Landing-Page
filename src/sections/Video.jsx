@@ -10,7 +10,6 @@ import ScrollVelocity from "@/components/scroll-velocity";
 function Video() {
   const videoSection = useRef(null);
   const video = useRef(null);
-  const videoContainer = useRef(null);
   const iconRefs = useRef([]);
 
   useGSAP(() => {
@@ -85,7 +84,7 @@ function Video() {
       className="min-h-screen bg-[#F7F6F1] relative overflow-hidden"
       ref={videoSection}
     >
-      <div className="icons absolute left-1/2 transform -translate-x-1/2 top-[70px] z-10 flex gap-3  ">
+      <div className="icons absolute left-1/2 transform -translate-x-1/2 top-[70px] z-50 flex gap-3">
         {icons.map(({ label }, i) => {
           return (
             <div
@@ -100,7 +99,7 @@ function Video() {
           );
         })}
       </div>
-      <div className="video w-full h-full relative">
+      <div className="video w-full h-full relative z-10 pointer-events-none">
         <video
           id="test"
           // autoPlay

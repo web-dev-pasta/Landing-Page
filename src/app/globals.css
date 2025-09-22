@@ -5,6 +5,14 @@
   outline: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
 /* === Font === */
 
 /* Black */
@@ -119,6 +127,12 @@
   src: url("/fonts/HelveticaNeueUltraLightItalic.otf") format("opentype");
   font-weight: 100;
   font-style: italic;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/MontserratAlternates-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* === Reset === */
