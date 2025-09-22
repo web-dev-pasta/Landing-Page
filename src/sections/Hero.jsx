@@ -26,6 +26,7 @@ function Hero() {
   const littleImageText = useRef(null);
   const contact = useRef(null);
   const contactText = useRef(null);
+  const heroPttern = useRef(null);
   const animatedTextLines = [
     "Real Estate in Dubai",
     "Ideal for Living and",
@@ -106,7 +107,7 @@ function Hero() {
       scale: 0.95,
       y: 20,
     });
-    gsap.from(heroImageMobile.current, {
+    gsap.from([heroImageMobile.current, heroPttern.current], {
       opacity: 0.5,
       scale: 1.15,
       duration: 2,
@@ -132,7 +133,7 @@ function Hero() {
       </div>
       <div className="absolute inset-0 -z-10 overflow-hidden hidden lg:block">
         <img
-          ref={heroImageMobile}
+          ref={heroPttern}
           src="/assets/images/bg-2.svg"
           className="w-full h-full object-cover [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1),rgba(0,0,0,0))]
   [mask-repeat:no-repeat] [mask-size:100%_110%]"
