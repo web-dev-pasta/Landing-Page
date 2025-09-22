@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <ReactLenis root>
       <Hero />
+      <section className="min-h-screen"></section>
     </ReactLenis>
   );
 }

@@ -134,7 +134,8 @@ function Hero() {
         <img
           ref={heroImageMobile}
           src="/assets/images/bg-2.svg"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1),rgba(0,0,0,0))]
+  [mask-repeat:no-repeat] [mask-size:100%_110%]"
           alt="hero_bg_pattern"
         />
       </div>
