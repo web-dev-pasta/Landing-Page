@@ -245,7 +245,7 @@ function Portfolio() {
     <section
       ref={portfolioSection}
       className="min-h-screen bg-[#232323] px-10 relative -top-20 pb-[100px]"
-      style={{ zIndex: 1 }}
+      style={{ zIndex: 9 }}
     >
       <div className="flex justify-between items-center flex-col gap-4 lg:flex-row text-center">
         <div>

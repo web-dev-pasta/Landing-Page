@@ -171,6 +171,7 @@ function Build() {
       <section
         className="min-h-screen bg-white relative text-black flex px-10 py-6 overflow-hidden"
         ref={section}
+        style={{ zIndex: 8 }}
       >
         <div className="absolute inset-0 lg:hidden">
           <div className="w-full h-full overflow-hidden rounded-t-4xl">
