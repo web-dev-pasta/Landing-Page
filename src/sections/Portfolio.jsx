@@ -245,6 +245,7 @@ function Portfolio() {
     <section
       ref={portfolioSection}
       className="min-h-screen bg-[#232323] px-10 relative -top-20 pb-[100px]"
+      style={{ zIndex: 1 }}
     >
       <div className="flex justify-between items-center flex-col gap-4 lg:flex-row text-center">
         <div>
@@ -285,7 +286,7 @@ function Portfolio() {
         {portfolioItems.map((item, index) => (
           <div
             key={index}
-            className="relative w-full h-full overflow-hidden rounded-3xl p-10 group transition duration-200"
+            className="relative w-full h-full overflow-hidden rounded-3xl p-10 group transition duration-200 mx-auto"
           >
             <div className="hidden lg:flex flex-col justify-between h-full text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <p className="text-white font-bold text-xl [text-shadow:-6px_2px_14px_black]">
@@ -331,7 +332,7 @@ function Portfolio() {
                 src={item.img}
                 alt={`portfolio-${index + 1}`}
                 fill
-                className="parallax-image object-cover"
+                className="parallax-image object-cover "
                 style={{ scale: 1.4 }}
               />
             </div>

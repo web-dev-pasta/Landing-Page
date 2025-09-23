@@ -90,7 +90,7 @@ function Video() {
             <div
               className={`icon-${
                 i + 1
-              } cursor-pointer rounded-full text-[#c9c9c9bf] bg-black text-2xl w-9 h-9 flex justify-center items-center`}
+              } cursor-pointer rounded-full text-[#c9c9c9bf] bg-[#232323] text-2xl w-9 h-9 flex justify-center items-center`}
               key={i}
               ref={(el) => (iconRefs.current[i] = el)}
             >
