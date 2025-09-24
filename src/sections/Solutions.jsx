@@ -73,10 +73,9 @@ function Solutions() {
   return (
     <section
       ref={solutionsSection}
-      className="relative bg-[#232323] text-white flex flex-col justify-between pt-10 gap-[100px] lg:gap-[250px]"
+      className="relative bg-[#232323] text-white flex flex-col justify-between pt-10 min-h-screen"
       style={{ zIndex: 7 }}
     >
-      <div className="absolute bg-[#232323] inset-x-0 -bottom-[260px] h-[260px]"></div>
       <div className="px-8  holder-top flex gap-10 flex-col items-center lg:items-start lg:flex-row">
         <div className="left flex-1 text-center lg:text-start">
           <div className="text text-white text-[8.3vw] sm:text-[45px] lg:text-[65px] font-light">

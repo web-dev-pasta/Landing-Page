@@ -14,7 +14,7 @@ export default function Home() {
       <Portfolio />
       <Build />
       <Solutions />
-      <Path />
+      {/* <Path /> */}
     </ReactLenis>
   );
 }
