@@ -217,9 +217,9 @@ function Portfolio() {
       },
     });
     gsap.to(portfolioSection.current, {
-      y: -100,
+      y: 80,
       scrollTrigger: {
-        trigger: portfolioSection.current,
+        trigger: ".video-section",
         start: "bottom 75%",
         end: "bottom 10%",
         scrub: true,
@@ -244,7 +244,7 @@ function Portfolio() {
   return (
     <section
       ref={portfolioSection}
-      className="min-h-screen bg-[#232323] px-10 relative -top-20 pb-[100px]"
+      className="portfolio-section min-h-screen bg-[#232323] px-10 relative -top-20 pb-[100px]"
       style={{ zIndex: 9 }}
     >
       <div className="flex justify-between items-center flex-col gap-4 lg:flex-row text-center">

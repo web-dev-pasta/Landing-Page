@@ -27,11 +27,38 @@ function Build() {
     "/assets/images/man-2.jpg",
     "/assets/images/woman-2.jpg",
   ];
+  const stats = [
+    {
+      value: 96,
+      suffix: "+",
+      lines: ["Successful", "Transactions Monthly"],
+    },
+    {
+      value: 87,
+      suffix: "%",
+      lines: ["Customer", "Satisfaction Rate"],
+    },
+    {
+      value: 492,
+      suffix: "",
+      lines: ["Exquisite Properties", "Ready for Your Selection"],
+    },
+  ];
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section.current,
         start: "top bottom",
+      },
+    });
+
+    gsap.to(".holder", {
+      y: 80,
+      scrollTrigger: {
+        trigger: ".portfolio-section",
+        start: "bottom 75%",
+        end: "bottom 10%",
+        scrub: true,
       },
     });
     gsap.set(contact.current, {
@@ -134,13 +161,13 @@ function Build() {
       borderBottomLeftRadius: "30px",
       scrollTrigger: {
         trigger: section.current,
-        start: "bottom bottom",
+        start: "bottom 95%",
         end: "bottom 50%",
         scrub: true,
       },
     });
     gsap.to(section.current, {
-      y: -100,
+      y: -40,
       scrollTrigger: {
         trigger: section.current,
         start: "bottom 75%",
@@ -149,29 +176,14 @@ function Build() {
       },
     });
   });
-  const stats = [
-    {
-      value: 96,
-      suffix: "+",
-      lines: ["Successful", "Transactions Monthly"],
-    },
-    {
-      value: 87,
-      suffix: "%",
-      lines: ["Customer", "Satisfaction Rate"],
-    },
-    {
-      value: 492,
-      suffix: "",
-      lines: ["Exquisite Properties", "Ready for Your Selection"],
-    },
-  ];
   return (
-    <div className="holder bg-[#232323] relative -top-40 overflow-hidden">
+    <div
+      className="holder bg-[#232323] relative -top-20 build-section"
+      style={{ zIndex: 8 }}
+    >
       <section
-        className="min-h-screen bg-white relative text-black flex px-10 py-6 overflow-hidden"
+        className="min-h-screen bg-white relative text-black flex px-10 py-6 overflow-hidden -top-[1px]"
         ref={section}
-        style={{ zIndex: 8 }}
       >
         <div className="absolute inset-0 lg:hidden">
           <div className="w-full h-full overflow-hidden rounded-t-4xl">

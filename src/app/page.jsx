@@ -5,6 +5,7 @@ import Video from "@/sections/Video";
 import Portfolio from "@/sections/Portfolio";
 import Build from "@/sections/Build";
 import Solutions from "@/sections/Solutions";
+import Path from "@/sections/Path";
 export default function Home() {
   return (
     <ReactLenis root>
@@ -13,7 +14,7 @@ export default function Home() {
       <Portfolio />
       <Build />
       <Solutions />
-      <section className="min-h-screen "></section>
+      <Path />
     </ReactLenis>
   );
 }

@@ -54,15 +54,15 @@ function Video() {
         scrub: true,
       },
     });
-    gsap.to(video.current, {
-      y: -100,
-      scrollTrigger: {
-        trigger: videoSection.current,
-        start: "bottom 75%",
-        end: "bottom 10%",
-        scrub: true,
-      },
-    });
+    // gsap.to(video.current, {
+    //   y: -100,
+    //   scrollTrigger: {
+    //     trigger: videoSection.current,
+    //     start: "bottom 75%",
+    //     end: "bottom 10%",
+    //     scrub: true,
+    //   },
+    // });
     gsap.to(videoSection.current, {
       backgroundColor: `#232323`,
       duration: 1e-9,
@@ -81,7 +81,7 @@ function Video() {
   const icons = [{ label: <TbHome2 /> }, { label: <HiOutlineKey /> }];
   return (
     <section
-      className="min-h-screen bg-[#F7F6F1] relative overflow-hidden"
+      className="video-section min-h-screen bg-[#F7F6F1] relative overflow-hidden"
       ref={videoSection}
     >
       <div className="icons absolute left-1/2 transform -translate-x-1/2 top-[70px] z-50 flex gap-3">
