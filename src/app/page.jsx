@@ -9,6 +9,7 @@ import Path from "@/sections/Path";
 import PathTablet from "@/sections/PathTablet";
 import { useState, useEffect } from "react";
 import Stands from "@/sections/Stands";
+import Discover from "@/sections/Discover";
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -43,6 +44,7 @@ export default function Home() {
 
       {isTablet ? <PathTablet /> : <Path />}
       <Stands />
+      <Discover />
       <section className="min-h-screen"></section>
     </ReactLenis>
   );

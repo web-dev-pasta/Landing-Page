@@ -57,7 +57,6 @@ function Path() {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 40%",
-        markers: true,
       },
     });
     initialTl
