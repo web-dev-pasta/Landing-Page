@@ -56,7 +56,8 @@ function Path() {
     const initialTl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top+=100 bottom",
+        start: "top 40%",
+        markers: true,
       },
     });
     initialTl
@@ -65,7 +66,7 @@ function Path() {
         {
           x: 20,
           y: -110,
-          opacity: 0.5,
+          opacity: 0,
           ease: "power2.inOut",
         },
         {
@@ -94,7 +95,7 @@ function Path() {
           x: -20,
           y: -110,
           ease: "power2.inOut",
-          opacity: 0.5,
+          opacity: 0,
         },
         {
           x: -120,
