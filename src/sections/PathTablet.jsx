@@ -65,12 +65,33 @@ function PathTablet() {
         start: "top-=100 top",
       },
     });
+    gsap.to(sectionRef.current, {
+      scale: 0.94,
+      borderBottomRightRadius: "30px",
+      borderBottomLeftRadius: "30px",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "bottom 98%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+    gsap.to(sectionRef.current, {
+      top: -50,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "bottom bottom",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
   }, []);
 
   return (
     <section
       ref={sectionRef}
       className="min-h-screen bg-[#232323] text-white flex flex-col items-center justify-between py-10 px-5 relative -top-[1px]"
+      style={{ zIndex: 8 }}
     >
       <p
         className="text-center text-white text-[8.3vw] sm:text-[45px] lg:text-[65px] font-light"

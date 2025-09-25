@@ -8,31 +8,31 @@ import Solutions from "@/sections/Solutions";
 import Path from "@/sections/Path";
 import PathTablet from "@/sections/PathTablet";
 import { useState, useEffect } from "react";
+import Stands from "@/sections/Stands";
+
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    setMounted(true);
-
     const media = window.matchMedia(query);
-    if (media.matches !== matches) {
-      setMatches(media.matches);
-    }
-
     const listener = () => setMatches(media.matches);
+    setMatches(media.matches);
     media.addEventListener("change", listener);
     return () => media.removeEventListener("change", listener);
-  }, [matches, query]);
-
-  if (!mounted) {
-    return false;
-  }
+  }, [query]);
 
   return matches;
 }
+
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
   const isTablet = useMediaQuery("(max-width: 1300px)");
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <ReactLenis root>
       <Hero />
@@ -40,7 +40,9 @@ export default function Home() {
       <Portfolio />
       <Build />
       <Solutions />
+
       {isTablet ? <PathTablet /> : <Path />}
+      <Stands />
       <section className="min-h-screen"></section>
     </ReactLenis>
   );

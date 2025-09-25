@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import parse from "html-react-parser";
 import { FiDownload } from "react-icons/fi";
-import { useEffect } from "react";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -228,6 +227,26 @@ function Path() {
         },
         "phase2"
       );
+    gsap.to(sectionRef.current, {
+      scale: 0.94,
+      borderBottomRightRadius: "30px",
+      borderBottomLeftRadius: "30px",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "bottom 98%",
+        end: "bottom 50%",
+        scrub: true,
+      },
+    });
+    gsap.to(sectionRef.current, {
+      top: -45,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "bottom 60%",
+        end: "bottom 20%",
+        scrub: true,
+      },
+    });
   }, []);
 
   const text = [
@@ -239,7 +258,8 @@ function Path() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-[#232323] text-white flex flex-col"
+      className="relative path-section min-h-screen bg-[#232323] text-white flex flex-col"
+      style={{ zIndex: 8 }}
     >
       <p
         className="text-center text-white text-[8.3vw] sm:text-[45px] lg:text-[65px] font-light my-20"

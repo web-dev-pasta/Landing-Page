@@ -161,16 +161,16 @@ function Build() {
       borderBottomLeftRadius: "30px",
       scrollTrigger: {
         trigger: section.current,
-        start: "bottom 95%",
+        start: "bottom+=80 bottom",
         end: "bottom 50%",
         scrub: true,
       },
     });
     gsap.to(section.current, {
-      y: -40,
+      y: -80,
       scrollTrigger: {
         trigger: section.current,
-        start: "bottom 75%",
+        start: "bottom 65%",
         end: "bottom 10%",
         scrub: true,
       },
