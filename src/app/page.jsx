@@ -10,6 +10,7 @@ import PathTablet from "@/sections/PathTablet";
 import { useState, useEffect } from "react";
 import Stands from "@/sections/Stands";
 import Discover from "@/sections/Discover";
+import Partners from "@/sections/Partners";
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -36,16 +37,17 @@ export default function Home() {
 
   return (
     <ReactLenis root>
-      {/* <Hero />
+      <Hero />
       <Video />
       <Portfolio />
       <Build />
       <Solutions />
 
       {isTablet ? <PathTablet /> : <Path />}
-      <Stands /> */}
+      <Stands />
       <Discover />
-      <section className="min-h-screen"></section>
+      <Partners />
+      {/* <section className="min-h-screen"></section> */}
     </ReactLenis>
   );
 }

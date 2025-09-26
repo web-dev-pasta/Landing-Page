@@ -9,10 +9,6 @@ body {
   overflow-x: hidden;
 }
 
-.montserrat {
-  font-family: "Montserrat", sans-serif;
-}
-
 /* === Font === */
 
 /* Black */
@@ -174,5 +170,8 @@ img {
   }
   .area-five {
     grid-area: five;
+  }
+  .montserrat {
+    font-family: "Montserrat", sans-serif !important;
   }
 }

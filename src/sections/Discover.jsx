@@ -78,6 +78,16 @@ function Discover() {
         start: "top bottom",
       },
     });
+    gsap.to(sectionRef.current, {
+      y: 250,
+      ease: "none",
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "bottom bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
   }, []);
 
   const areas = {
@@ -175,13 +185,13 @@ function Discover() {
                   return (
                     <div
                       key={imgIndex}
-                      className="rounded-2xl bg-white flex flex-col items-center justify-between py-4"
+                      className="rounded-2xl bg-white flex flex-col items-center justify-between py-6"
                     >
                       <div className="logo">
                         <Image
                           src={`/assets/images/logo-discover.svg`}
-                          width={70}
-                          height={70}
+                          width={40}
+                          height={40}
                           alt="logo-discover"
                         />
                       </div>
