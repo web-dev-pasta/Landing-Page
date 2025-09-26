@@ -332,6 +332,7 @@ function Portfolio() {
                 src={item.img}
                 alt={`portfolio-${index + 1}`}
                 fill
+                sizes="100vw"
                 className="parallax-image object-cover "
                 style={{ scale: 1.4 }}
               />

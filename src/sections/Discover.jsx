@@ -7,8 +7,14 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+import { FiDownload } from "react-icons/fi";
 
 function Discover() {
+  const iconRefs = useRef([]);
+  const sectionRef = useRef(null);
+  const grid = useRef(null);
+  const contact = useRef(null);
+  const contactText = useRef(null);
   useGSAP(() => {
     gsap.from(".span-discover", {
       y: 60,
@@ -38,10 +44,42 @@ function Discover() {
         start: "top bottom",
       },
     });
+    gsap.set(contact.current, {
+      clipPath: `inset(0 76.7% 0 0 round 0 50px 50px 0)`,
+    });
+    gsap.from(contactText.current, {
+      delay: 1.5,
+      duration: 1,
+      opacity: 0,
+      scale: 0.95,
+      scrollTrigger: {
+        trigger: contact.current,
+        start: "top bottom",
+      },
+    });
+    gsap.to(contact.current, {
+      clipPath: `inset(0 0% 0 0 round 0 50px 50px 0)`,
+      delay: 1,
+      duration: 2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: contact.current,
+        start: "top bottom",
+      },
+    });
+
+    gsap.from(contact.current, {
+      opacity: 0.2,
+      scale: 0,
+      duration: 2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: contact.current,
+        start: "top bottom",
+      },
+    });
   }, []);
-  const iconRefs = useRef([]);
-  const sectionRef = useRef(null);
-  const grid = useRef(null);
+
   const areas = {
     "area-one": ["/assets/images/build-1.jpg", "/assets/images/build-2.jpg"],
     "area-two": [
@@ -79,7 +117,7 @@ function Discover() {
     "Luxury\nStay",
     "Work\nHub",
     "Modern\nOffice",
-    "Blue\nOasis",
+    "Perfect\nPools",
     "Sea\nBreeze",
     "Chill\nSpot",
     "Blue\nOasis",
@@ -132,6 +170,47 @@ function Discover() {
             >
               {images.map((src, imgIndex) => {
                 const caption = captions[captionIndex++];
+
+                if (area === "area-three" && imgIndex === images.length - 1) {
+                  return (
+                    <div
+                      key={imgIndex}
+                      className="rounded-2xl bg-white flex flex-col items-center justify-between py-4"
+                    >
+                      <div className="logo">
+                        <Image
+                          src={`/assets/images/logo-discover.svg`}
+                          width={70}
+                          height={70}
+                          alt="logo-discover"
+                        />
+                      </div>
+                      <div className="text-center text-black font-light text-sm">
+                        Explore Our Diverse Range of Property Types and Find
+                        Your Perfect Match
+                      </div>
+                      <div
+                        className="phone p-[4px] bg-[#2D2D2D] rounded-full text-white flex items-center w-fit cursor-pointer "
+                        ref={contact}
+                        style={{
+                          transformOrigin: `20px center`,
+                        }}
+                      >
+                        <div className="icon bg-white rounded-full p-2">
+                          <span className="text-xl">
+                            <FiDownload className="text-[#5A6870]" />
+                          </span>
+                        </div>
+                        <p
+                          className="px-4 font-light text-white whitespace-nowrap text-sm"
+                          ref={contactText}
+                        >
+                          Catalog Download
+                        </p>
+                      </div>
+                    </div>
+                  );
+                }
                 return (
                   <div
                     key={imgIndex}
@@ -151,6 +230,9 @@ function Discover() {
                       src={src}
                       alt={caption}
                       fill
+                      sizes="(max-width: 768px) 100vw, 
+                (max-width: 1200px) 50vw, 
+                33vw"
                       className="object-cover object-center group-hover:scale-[1.1] transition duration-300 ease-in origin-center"
                     />
                   </div>
@@ -159,6 +241,7 @@ function Discover() {
             </div>
           ))}
         </div>
+
         <div
           className="
           grid lg:hidden sm:gap-2
@@ -186,6 +269,9 @@ function Discover() {
                 <Image
                   src={src}
                   alt={caption}
+                  sizes="(max-width: 768px) 100vw, 
+         (max-width: 1200px) 50vw, 
+         33vw"
                   fill
                   className="object-cover object-center group-hover:scale-[1.1] transition duration-300 ease-in origin-center"
                 />

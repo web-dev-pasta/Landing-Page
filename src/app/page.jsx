@@ -36,14 +36,14 @@ export default function Home() {
 
   return (
     <ReactLenis root>
-      <Hero />
+      {/* <Hero />
       <Video />
       <Portfolio />
       <Build />
       <Solutions />
 
       {isTablet ? <PathTablet /> : <Path />}
-      <Stands />
+      <Stands /> */}
       <Discover />
       <section className="min-h-screen"></section>
     </ReactLenis>
