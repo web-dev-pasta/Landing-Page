@@ -24,15 +24,23 @@ function Video() {
       },
     });
 
-    tl.to(video.current, {
-      "--radius": "0px",
-      scrollTrigger: {
-        trigger: "#test",
-        start: "top 30%",
-        end: "top top",
-        scrub: true,
-      },
-    });
+    const tween = gsap.fromTo(
+      video.current,
+      { "--radius": "30px" },
+      {
+        "--radius": "0px",
+        ease: "none",
+        immediateRender: false,
+        scrollTrigger: {
+          trigger: video.current,
+          start: "top 80%",
+          end: "top top",
+          scrub: true,
+          markers: true,
+          invalidateOnRefresh: true,
+        },
+      }
+    );
     gsap.from(iconRefs.current, {
       scale: 0,
       duration: 1,
@@ -54,15 +62,15 @@ function Video() {
         scrub: true,
       },
     });
-    // gsap.to(video.current, {
-    //   y: -100,
-    //   scrollTrigger: {
-    //     trigger: videoSection.current,
-    //     start: "bottom 75%",
-    //     end: "bottom 10%",
-    //     scrub: true,
-    //   },
-    // });
+    gsap.to(video.current, {
+      y: -50,
+      scrollTrigger: {
+        trigger: videoSection.current,
+        start: "bottom 75%",
+        end: "bottom 10%",
+        scrub: true,
+      },
+    });
     gsap.to(videoSection.current, {
       backgroundColor: `#232323`,
       duration: 1e-9,
@@ -109,7 +117,7 @@ function Video() {
           className="w-screen h-screen object-cover -z-10 pointer-events-none"
           ref={video}
           style={{
-            "--radius": "20px",
+            "--radius": "30px",
             clipPath: "inset(30% round var(--radius))",
           }}
         >

@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 import Stands from "@/sections/Stands";
 import Discover from "@/sections/Discover";
 import Partners from "@/sections/Partners";
+import Help from "@/sections/Help";
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -47,7 +48,8 @@ export default function Home() {
       <Stands />
       <Discover />
       <Partners />
-      {/* <section className="min-h-screen"></section> */}
+      <section className="min-h-screen"></section>
+      <Help />
     </ReactLenis>
   );
 }
