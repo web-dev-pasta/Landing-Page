@@ -36,7 +36,6 @@ function Video() {
           start: "top 80%",
           end: "top top",
           scrub: true,
-          markers: true,
           invalidateOnRefresh: true,
         },
       }

@@ -12,6 +12,7 @@ import Stands from "@/sections/Stands";
 import Discover from "@/sections/Discover";
 import Partners from "@/sections/Partners";
 import Help from "@/sections/Help";
+import HelpTablet from "@/sections/HelpTablet";
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -29,6 +30,7 @@ function useMediaQuery(query) {
 export default function Home() {
   const [mounted, setMounted] = useState(false);
   const isTablet = useMediaQuery("(max-width: 1300px)");
+  const isTabletHero = useMediaQuery("(max-width: 1024px)");
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -38,7 +40,7 @@ export default function Home() {
 
   return (
     <ReactLenis root>
-      <Hero />
+      {/* <Hero />
       <Video />
       <Portfolio />
       <Build />
@@ -47,9 +49,11 @@ export default function Home() {
       {isTablet ? <PathTablet /> : <Path />}
       <Stands />
       <Discover />
-      <Partners />
-      <section className="min-h-screen"></section>
-      <Help />
+      <Partners /> */}
+      {/* <section className="min-h-screen bg-gray-200"></section> */}
+      {isTabletHero ? <HelpTablet /> : <Help />}
+      <section className="min-h-screen bg-gray-200"></section>
+      {/* <section className="min-h-screen bg-gray-200"></section> */}
     </ReactLenis>
   );
 }
