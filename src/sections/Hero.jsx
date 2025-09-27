@@ -26,7 +26,7 @@ function Hero() {
   const littleImageText = useRef(null);
   const contact = useRef(null);
   const contactText = useRef(null);
-  const heroPttern = useRef(null);
+  const heroPattern = useRef(null);
   const animatedTextLines = [
     "Real Estate in Dubai",
     "Ideal for Living and",
@@ -107,7 +107,7 @@ function Hero() {
       scale: 0.95,
       y: 20,
     });
-    gsap.from([heroImageMobile.current, heroPttern.current], {
+    gsap.from([heroImageMobile.current, heroPattern.current], {
       opacity: 0.5,
       scale: 1.15,
       duration: 2,
@@ -123,21 +123,25 @@ function Hero() {
   return (
     <section className="min-h-screen flex p-2 relative">
       <div className="absolute inset-0 -z-10 lg:hidden overflow-hidden">
-        <img
+        <Image
           ref={heroImageMobile}
           src="/assets/images/burj-al-arab.jpg"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: `28%` }}
           alt="hero_img"
+          fill
+          sizes="100vw"
+          style={{ objectPosition: "28%" }}
+          className="object-cover"
+          priority
         />
       </div>
-      <div className="absolute inset-0 -z-10 overflow-hidden hidden lg:block">
-        <img
-          ref={heroPttern}
+      <div className="absolute inset-0 -z-10 overflow-hidden max-lg:hidden">
+        <Image
+          ref={heroPattern}
           src="/assets/images/bg-2.svg"
-          className="w-full h-full object-cover [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1),rgba(0,0,0,0))]
-  [mask-repeat:no-repeat] [mask-size:100%_110%]"
           alt="hero_bg_pattern"
+          fill
+          sizes="100vw"
+          className="[mask-image:linear-gradient(to_bottom,rgba(0,0,0,1),rgba(0,0,0,0))] [mask-repeat:no-repeat] [mask-size:100%_110%] object-cover"
         />
       </div>
       <div className="left flex-1 flex flex-col justify-between p-5 ">
@@ -146,11 +150,12 @@ function Hero() {
             className="logo"
             style={{ clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)` }}
           >
-            <img
+            <Image
+              ref={logo}
               src="/assets/images/logo.svg"
               alt="logo_img"
-              className="w-[140px]"
-              ref={logo}
+              width={140}
+              height={50}
             />
           </div>
           <div className="icons flex gap-5">
@@ -171,12 +176,12 @@ function Hero() {
         </header>
         <main className="text-center">
           <p
-            className="capitalize text-lg mb-2 text-white [text-shadow:-6px_2px_14px_black] lg:text-black lg:text-shadow-none"
+            className="capitalize text-lg mb-2 text-white max-lg:[text-shadow:-6px_2px_14px_black] lg:text-black"
             ref={animtedLittleHeader}
           >
             building your dreams
           </p>
-          <h1 className="sm:text-5xl text-4xl leading-tight flex flex-col text-white [text-shadow:-6px_2px_14px_black] lg:text-black lg:text-shadow-none">
+          <h1 className="sm:text-5xl text-4xl leading-tight flex flex-col max-lg:text-white max-lg:[text-shadow:-6px_2px_14px_black]">
             {animatedTextLines.map((e, i) => {
               return (
                 <div
@@ -184,7 +189,7 @@ function Hero() {
                   style={{
                     clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)`,
                   }}
-                  className="hidden sm:block"
+                  className="max-sm:hidden"
                 >
                   <span
                     ref={(el) => (animatedTextLinesRefs.current[i] = el)}
@@ -200,7 +205,7 @@ function Hero() {
             </span>
           </h1>
         </main>
-        <div className="contact flex flex-col-reverse gap-[14px] sm:flex-row justify-between items-center">
+        <div className="contact flex max-sm:flex-col-reverse gap-[14px] justify-between items-center">
           <div
             className="phone p-[4px] bg-black rounded-full text-white flex place-items-center cursor-pointer"
             ref={contact}
@@ -220,7 +225,7 @@ function Hero() {
           <div className="explore flex items-center gap-4 cursor-pointer">
             <p
               ref={littleImageText}
-              className="text-center sm:text-left text-white [text-shadow:-6px_2px_14px_black] lg:text-black lg:text-shadow-none"
+              className="max-sm:text-center max-lg:text-white max-lg:[text-shadow:-6px_2px_14px_black]"
             >
               Explore All
               <br /> Our Properties
@@ -240,18 +245,21 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="right  rounded-4xl overflow-hidden flex-1 relative flex-col justify-between p-8 hidden lg:flex">
+      <div className="flex right rounded-4xl overflow-hidden flex-1 relative flex-col justify-between p-8 max-lg:hidden">
         <div className="absolute inset-0 -z-10">
-          <img
+          <Image
             ref={heroImage}
             src="/assets/images/burj-al-arab.jpg"
-            className="w-full h-full object-cover"
-            style={{ objectPosition: `28%` }}
             alt="hero_img"
+            fill
+            style={{ objectPosition: "28%" }}
+            className="object-cover"
+            priority
+            sizes="100vw"
           />
         </div>
         <div className="img_header text-white text-lg font-light flex justify-between items-center px-4">
-          <div className="flex flex-col items-center xl:items-start">
+          <div className="flex flex-col max-xl:items-center">
             <div
               style={{ clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)` }}
             >
@@ -265,7 +273,7 @@ function Hero() {
               </span>
             </div>
           </div>
-          <div className="flex-col hidden xl:flex">
+          <div className="flex flex-col max-xl:hidden">
             <div
               style={{ clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)` }}
             >

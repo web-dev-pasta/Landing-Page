@@ -3,6 +3,7 @@
 * {
   font-family: "Helvetica Neue", sans-serif;
   outline: none;
+  cursor: url("/assets/images/cursor.png") 14 14, auto;
 }
 
 body {

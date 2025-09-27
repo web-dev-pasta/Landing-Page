@@ -247,10 +247,10 @@ function Portfolio() {
       className="portfolio-section min-h-screen bg-[#232323] px-10 relative -top-20 pb-[100px]"
       style={{ zIndex: 9 }}
     >
-      <div className="flex justify-between items-center flex-col gap-4 lg:flex-row text-center">
+      <div className="flex justify-between items-center max-lg:flex-col gap-4 text-center">
         <div>
           <p
-            className="capitalize text-white sm:text-5xl font-light text-[8vw]"
+            className="capitalize text-white text-5xl font-light max-sm:text-[8vw]"
             ref={exploreP}
           >
             explore our property protfolio
@@ -333,7 +333,7 @@ function Portfolio() {
                 alt={`portfolio-${index + 1}`}
                 fill
                 sizes="100vw"
-                className="parallax-image object-cover "
+                className="parallax-image object-cover"
                 style={{ scale: 1.4 }}
               />
             </div>
@@ -348,11 +348,11 @@ function Portfolio() {
       <div className="props flex mt-12 relative justify-center xl:justify-end">
         <p
           ref={props}
-          className="hidden xl:block absolute left-1/2 transform -translate-x-1/2 font-light bg-[#DAE5EA] rounded-full px-4 py-2 cursor-pointer"
+          className="max-xl:hidden absolute left-1/2 transform -translate-x-1/2 font-light bg-[#DAE5EA] rounded-full px-4 py-2 cursor-pointer"
         >
           All Properties
         </p>
-        <div className="socials flex items-center gap-[20px] text-white flex-col sm:flex-row sm:gap-[80px]">
+        <div className="socials flex items-center gap-[20px] text-white max-sm:flex-col sm:gap-[80px]">
           <div className="text" ref={links}>
             <p>Don't Miss Out on Hot Deals!</p>
             <p>Follow Us on Social Media</p>

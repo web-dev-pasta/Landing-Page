@@ -126,9 +126,9 @@ function Stands() {
       ref={standsSection}
       style={{ zIndex: 7 }}
     >
-      <div className="hero flex justify-between md:items-end mb-20 flex-col items-center md:flex-row gap-4 md:gap-0">
+      <div className="hero flex justify-between items-center md:items-end mb-20 max-md:flex-col max-md:gap-4">
         <div className="text">
-          <div className="explore flex items-center gap-2 mb-3 justify-center md:justify-start">
+          <div className="explore flex items-center gap-2 mb-3 max-md:justify-center">
             <span className="inline-block w-3 h-3 bg-black rounded-full"></span>
             <p ref={explore}>Explore Our Advantages</p>
           </div>
@@ -163,18 +163,18 @@ function Stands() {
         </div>
       </div>
       <div
-        className="grid gap-9 md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-cols-1 justify-items-center md:justify-items-start"
+        className="grid gap-9 md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] grid-cols-1 max-md:justify-items-center"
         ref={grid}
       >
         {features.map((item, i) => (
           <div key={i}>
-            <div className="image text-[25px] flex justify-center md:justify-start">
+            <div className="image text-[25px] flex max-md:justify-center">
               {item.icon}
             </div>
-            <p className="text-2xl my-3 text-center md:text-start">
+            <p className="text-2xl my-3 max-md:text-center">
               {item.title}
             </p>
-            <p className="text-[15px] text-gray-500 max-w-[300px] leading-relaxed text-center md:text-start mx-auto md:mx-[initial]">
+            <p className="text-[15px] text-gray-500 max-w-[300px] leading-relaxed max-md:text-center max-md:mx-auto">
               {item.desc}
             </p>
           </div>

@@ -76,8 +76,8 @@ function Solutions() {
       className="relative bg-[#232323] text-white flex flex-col justify-between pt-10 min-h-screen"
       style={{ zIndex: 7 }}
     >
-      <div className="px-8  holder-top flex gap-10 flex-col items-center lg:items-start lg:flex-row">
-        <div className="left flex-1 text-center lg:text-start">
+      <div className="px-8  holder-top flex gap-10 max-lg:flex-col max-lg:items-center">
+        <div className="left flex-1 max-lg:text-center">
           <div className="text text-white text-[8.3vw] sm:text-[45px] lg:text-[65px] font-light">
             <div
               style={{ clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)` }}
@@ -102,7 +102,7 @@ function Solutions() {
             </div>
           </div>
           <div
-            className="explore flex items-center gap-3 mt-6 cursor-pointer justify-center lg:justify-start"
+            className="explore flex items-center gap-3 mt-6 cursor-pointer max-lg:justify-center"
             ref={explore}
           >
             <span className="inline-block w-3 h-3 bg-white rounded-full"></span>

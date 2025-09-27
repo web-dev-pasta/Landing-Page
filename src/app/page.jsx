@@ -46,7 +46,6 @@ export default function Home() {
       <Portfolio />
       <Build />
       <Solutions />
-
       {isTablet ? <PathTablet /> : <Path />}
       <Stands />
       <Discover />

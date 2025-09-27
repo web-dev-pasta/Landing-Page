@@ -316,7 +316,7 @@ export default function Help() {
                   alt="logo_img"
                   width={140}
                   height={140}
-                  className="w-[140px] mx-auto lg:mx-[initial]"
+                  className="w-[140px] max-lg:mx-auto"
                 />
                 <p className="max-lg:text-center">
                   Building Your Dreams In Real Estate

@@ -109,10 +109,10 @@ function Video() {
       <div className="video w-full h-full relative z-10 pointer-events-none">
         <video
           id="test"
-          autoPlay
-          muted
-          loop
-          playsInline
+          // autoPlay
+          // muted
+          // loop
+          // playsInline
           className="w-screen h-screen object-cover -z-10 pointer-events-none"
           ref={video}
           style={{

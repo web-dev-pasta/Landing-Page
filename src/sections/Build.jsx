@@ -199,7 +199,7 @@ function Build() {
           </div>
         </div>
         <div className="left flex-1 flex flex-col justify-between">
-          <div className="top flex flex-col gap-[80px] items-center sm:items-start">
+          <div className="top flex flex-col gap-[80px] max-sm:items-center">
             <p className="lg:text-gray-400 max-w-[300px] leading-relaxed text-white">
               At Golden Gate Properties, we offer more than just real estate
               services, we provide an unparalleled experience tailored to meet
@@ -229,13 +229,13 @@ function Build() {
             {stats.map((item, i) => (
               <div
                 key={i}
-                className={`flex items-center lg:w-[90%] w-full flex-col sm:flex-row ${
+                className={`flex items-center lg:w-[90%] w-full max-sm:flex-col ${
                   i === stats.length - 1
                     ? ``
                     : `border-b-[#0000001a] border-b-[1px]`
                 } `}
               >
-                <p className="text-[60px] flex-1 count-up [text-shadow:-1px_1px_5px_black] lg:[text-shadow:initial]">
+                <p className="text-[60px] flex-1 count-up max-lg:[text-shadow:-1px_1px_5px_black]">
                   <CountUp
                     from={0}
                     to={item.value}
@@ -248,7 +248,7 @@ function Build() {
                     {item.suffix}
                   </span>
                 </p>
-                <div className="flex-1 flex flex-col items-center sm:items-start">
+                <div className="flex-1 flex flex-col max-sm:items-center">
                   {item.lines.map((line, j) => (
                     <div
                       key={j}
@@ -256,7 +256,7 @@ function Build() {
                         clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)`,
                       }}
                     >
-                      <span className="animated-span inline-block text-white lg:text-black [text-shadow:-1px_1px_5px_black] lg:[text-shadow:initial]">
+                      <span className="animated-span inline-block text-white lg:text-black max-lg:[text-shadow:-1px_1px_5px_black]">
                         {line}
                       </span>
                     </div>
@@ -266,7 +266,7 @@ function Build() {
             ))}
           </div>
         </div>
-        <div className="right rounded-4xl overflow-hidden flex-1 relative p-8 hidden lg:block">
+        <div className="right rounded-4xl overflow-hidden flex-1 relative p-8 max-lg:hidden">
           <div className="absolute inset-0 -z-10">
             <img
               ref={heroImage}

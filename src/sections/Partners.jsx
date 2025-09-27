@@ -77,13 +77,13 @@ function Partners() {
           className=""
         />
       </div>
-      <div className="landing px-10 flex gap-[100px] max-w-[1440px] mx-auto py-8 flex-col lg:flex-row">
-        <div className="text mx-auto lg:mx-[initial]">
-          <div className="explore flex items-center gap-2 mb-7 justify-center lg:justify-start">
+      <div className="landing px-10 flex gap-[100px] max-w-[1440px] mx-auto py-8 max-lg:flex-col">
+        <div className="text max-lg:mx-auto">
+          <div className="explore flex items-center gap-2 mb-7 max-lg:justify-center">
             <span className="inline-block w-3 h-3 bg-black rounded-full"></span>
             <p ref={explore}>Explore Our Advantages</p>
           </div>
-          <div className="sm:text-5xl leading-tight text-center lg:text-start text-[8vw]">
+          <div className="sm:text-5xl leading-tight max-lg:text-center text-[8vw]">
             <div
               style={{ clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)` }}
             >
@@ -95,7 +95,7 @@ function Partners() {
               <span className="span-stands inline-block">Questions</span>
             </div>
           </div>
-          <p className="text-[15px] text-gray-500 max-w-[300px] leading-relaxed text-center lg:text-start mx-auto lg:mx-[initial] mt-5">
+          <p className="text-[15px] text-gray-500 max-w-[300px] leading-relaxed max-lg:text-center max-lg:mx-auto mt-5">
             At Monte, we offer more than just real estate{" "}
             <br className="hidden sm:block" />
             services; we provide an unparalleled experience tailored to meet
@@ -113,7 +113,7 @@ function Partners() {
             >
               <div className="py-5 pr-4 flex justify-between items-center gap-4">
                 <p>{question}</p>
-                <FaPlus className="text-gray-700 min-w-5 hidden sm:block" />
+                <FaPlus className="text-gray-700 min-w-5 max-sm:hidden" />
               </div>
             </div>
           ))}
