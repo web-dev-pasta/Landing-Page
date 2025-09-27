@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <ReactLenis root>
-      {/* <Hero />
+      <Hero />
       <Video />
       <Portfolio />
       <Build />
@@ -49,11 +49,9 @@ export default function Home() {
       {isTablet ? <PathTablet /> : <Path />}
       <Stands />
       <Discover />
-      <Partners /> */}
-      {/* <section className="min-h-screen bg-gray-200"></section> */}
+      <Partners />
       {isTabletHero ? <HelpTablet /> : <Help />}
-      <section className="min-h-screen bg-gray-200"></section>
-      {/* <section className="min-h-screen bg-gray-200"></section> */}
+      {/* <section className="min-h-screen"></section> */}
     </ReactLenis>
   );
 }

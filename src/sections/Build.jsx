@@ -21,6 +21,7 @@ function Build() {
   const heroImageMobile = useRef(null);
   const section = useRef(null);
   const build = useRef(null);
+  const holder = useRef(null);
   const teamMembers = [
     "/assets/images/woman-1.jpg",
     "/assets/images/man-1.jpg",
@@ -51,16 +52,17 @@ function Build() {
         start: "top bottom",
       },
     });
-
-    gsap.to(".holder", {
+    gsap.to(holder.current, {
       y: 80,
       scrollTrigger: {
         trigger: ".portfolio-section",
         start: "bottom 75%",
         end: "bottom 10%",
         scrub: true,
+        markers: true,
       },
     });
+
     gsap.set(contact.current, {
       clipPath: `inset(0 75% 0 0 round 0 50px 50px 0)`,
     });
@@ -176,10 +178,12 @@ function Build() {
       },
     });
   });
+
   return (
     <div
-      className="holder bg-[#232323] relative -top-20 build-section"
+      className="bg-[#232323] relative -top-20 build-section"
       style={{ zIndex: 8 }}
+      ref={holder}
     >
       <section
         className="min-h-screen bg-white relative text-black flex px-10 py-6 overflow-hidden -top-[1px]"

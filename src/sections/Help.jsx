@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,20 +12,16 @@ function Help() {
   const section = useRef(null);
   const start = useRef(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      photo.current,
-      { "--inset": "20%" },
-      {
-        "--inset": "0%",
-        scrollTrigger: {
-          trigger: photo.current,
-          start: "top 80%",
-          end: "top 20%",
-          scrub: true,
-        },
-      }
-    );
+  useGSAP(() => {
+    gsap.to(photo.current, {
+      clipPath: "inset(0% round 30px)",
+      scrollTrigger: {
+        trigger: photo.current,
+        start: "top 80%",
+        end: "top 20%",
+        scrub: true,
+      },
+    });
     gsap.to(section.current, {
       scale: 0.94,
       borderRadius: `30px`,
@@ -44,44 +41,10 @@ function Help() {
         scrub: true,
       },
     });
-    gsap.fromTo(
-      ".styled-span",
-      {
-        y: 50,
-        opacity: 0.5,
-        scrollTrigger: {
-          trigger: ".styled-span",
-          start: "top bottom",
-        },
-      },
-      {
-        duration: 1,
-        ease: "power2.inOut",
-
-        y: 0,
-        opacity: 1,
-      }
-    );
-    gsap.fromTo(
-      start.current,
-      {
-        opacity: 0,
-        x: 20,
-        scrollTrigger: {
-          trigger: start.current,
-          start: "top bottom",
-        },
-      },
-      {
-        x: 0,
-        duration: 1,
-        opacity: 1,
-      }
-    );
   }, []);
 
   return (
-    <div className="holder bg-[#F7F6F1]">
+    <div className="bg-[#F7F6F1]">
       <section
         className="min-h-screen bg-white px-8 py-8 flex items-center"
         ref={section}
@@ -90,9 +53,7 @@ function Help() {
           ref={photo}
           className="relative w-full h-[850px] p-20"
           style={{
-            "--radius": "30px",
-            "--inset": "30%",
-            clipPath: "inset(var(--inset) round var(--radius))",
+            clipPath: "inset(30% round 30px)",
           }}
         >
           <Image
