@@ -59,7 +59,6 @@ function Build() {
         start: "bottom 75%",
         end: "bottom 10%",
         scrub: true,
-        markers: true,
       },
     });
 

@@ -13,6 +13,7 @@ import Discover from "@/sections/Discover";
 import Partners from "@/sections/Partners";
 import Help from "@/sections/Help";
 import HelpTablet from "@/sections/HelpTablet";
+import Footer from "@/sections/Footer";
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -51,7 +52,7 @@ export default function Home() {
       <Discover />
       <Partners />
       {isTabletHero ? <HelpTablet /> : <Help />}
-      {/* <section className="min-h-screen"></section> */}
+      {isTabletHero && <Footer />}
     </ReactLenis>
   );
 }
