@@ -21,6 +21,7 @@ function Footer() {
         <div className="left flex-1 flex flex-col justify-between">
           <div className="logo flex flex-col max-lg:gap-3">
             <Image
+              priority
               src="/assets/images/logo.svg"
               alt="logo_img"
               width={140}
@@ -65,6 +66,7 @@ function Footer() {
             </div>
             <div className="image">
               <Image
+                priority
                 src="/assets/images/map.png"
                 alt="map"
                 width={252}
@@ -83,9 +85,10 @@ function Footer() {
             <div className="header flex flex-col gap-3">
               <div className="expert flex items-center gap-3 max-sm:flex-col">
                 <Image
+                  priority
                   src="/assets/images/expert.jpg"
                   alt="expert"
-                  width={64} 
+                  width={64}
                   height={64}
                   sizes="100vw"
                   className="rounded-full"

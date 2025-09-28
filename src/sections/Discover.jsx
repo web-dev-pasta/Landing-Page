@@ -189,6 +189,7 @@ function Discover() {
                     >
                       <div className="logo">
                         <Image
+                          priority
                           src={`/assets/images/logo-discover.svg`}
                           width={40}
                           height={40}
@@ -237,6 +238,7 @@ function Discover() {
                     </span>
 
                     <Image
+                      priority
                       src={src}
                       alt={caption}
                       fill
@@ -277,6 +279,7 @@ function Discover() {
                 </span>
 
                 <Image
+                  priority
                   src={src}
                   alt={caption}
                   sizes="(max-width: 768px) 100vw, 

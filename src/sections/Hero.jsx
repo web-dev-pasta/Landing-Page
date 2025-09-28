@@ -123,6 +123,7 @@ function Hero() {
     <section className="min-h-screen flex p-2 relative">
       <div className="absolute inset-0 -z-10 lg:hidden overflow-hidden">
         <Image
+          priority
           ref={heroImageMobile}
           src="/assets/images/burj-al-arab.jpg"
           alt="hero_img"
@@ -135,6 +136,7 @@ function Hero() {
       </div>
       <div className="absolute inset-0 -z-10 overflow-hidden max-lg:hidden">
         <Image
+          priority
           ref={heroPattern}
           src="/assets/images/bg-2.svg"
           alt="hero_bg_pattern"
@@ -150,6 +152,7 @@ function Hero() {
             style={{ clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)` }}
           >
             <Image
+              priority
               ref={logo}
               src="/assets/images/logo.svg"
               alt="logo_img"
@@ -230,6 +233,7 @@ function Hero() {
             </p>
             <div className="image relative" ref={littleImage}>
               <Image
+                priority
                 src={`/assets/images/office.jpg`}
                 width={70}
                 height={70}
@@ -247,6 +251,7 @@ function Hero() {
       <div className="flex right rounded-4xl overflow-hidden flex-1 relative flex-col justify-between p-8 max-lg:hidden">
         <div className="absolute inset-0 -z-10">
           <Image
+            priority
             ref={heroImage}
             src="/assets/images/burj-al-arab.jpg"
             alt="hero_img"

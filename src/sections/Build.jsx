@@ -191,6 +191,7 @@ function Build() {
         <div className="absolute inset-0 lg:hidden">
           <div className="w-full h-full overflow-hidden rounded-t-4xl">
             <Image
+              priority
               src="/assets/images/marina.jpg"
               alt="hero_img"
               fill
@@ -212,6 +213,7 @@ function Build() {
                 {teamMembers.map((e, i) => {
                   return (
                     <Image
+                      priority
                       key={i}
                       src={e}
                       alt={`team-member-${i}`}
@@ -275,6 +277,7 @@ function Build() {
         <div className="right rounded-4xl overflow-hidden flex-1 relative p-8 max-lg:hidden">
           <div className="absolute inset-0 -z-10">
             <Image
+              priority
               ref={heroImage}
               src="/assets/images/marina.jpg"
               alt="hero_img"
@@ -325,6 +328,7 @@ function Build() {
                   <div className="image relative">
                     <span className="w-4 h-4 rounded-full bg-white absolute top-0 right-[2px] border-black border-4"></span>
                     <Image
+                      priority
                       src="/assets/images/expert.jpg"
                       alt="expert"
                       width={64}

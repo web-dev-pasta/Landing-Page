@@ -329,6 +329,7 @@ function Portfolio() {
             </div>
             <div className="absolute inset-0 -z-10 overflow-hidden">
               <Image
+                priority
                 src={item.img}
                 alt={`portfolio-${index + 1}`}
                 fill
