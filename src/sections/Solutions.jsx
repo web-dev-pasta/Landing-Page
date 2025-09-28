@@ -126,6 +126,7 @@ function Solutions() {
                     alt={step.title}
                     width={200}
                     height={200}
+                    sizes="100vw"
                     className="rounded-full w-[85px] h-[85px]"
                   />
                 </div>

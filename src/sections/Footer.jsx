@@ -64,10 +64,13 @@ function Footer() {
               </div>
             </div>
             <div className="image">
-              <img
+              <Image
                 src="/assets/images/map.png"
                 alt="map"
-                className="w-63 rounded-xl"
+                width={252}
+                height={252}
+                sizes="100vw"
+                className="rounded-xl"
               />
               <div className="text mt-4 flex flex-col gap-2 max-sm:text-center">
                 <p>123 Zayed Road,</p>
@@ -79,10 +82,13 @@ function Footer() {
           <div className="founder flex flex-col justify-between max-md:gap-4">
             <div className="header flex flex-col gap-3">
               <div className="expert flex items-center gap-3 max-sm:flex-col">
-                <img
+                <Image
                   src="/assets/images/expert.jpg"
                   alt="expert"
-                  className="w-16 h-16 rounded-full"
+                  width={64} 
+                  height={64}
+                  sizes="100vw"
+                  className="rounded-full"
                 />
                 <div className="text max-sm:text-center">
                   <p className="text-sm text-gray-500 leading-relaxed">

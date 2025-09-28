@@ -236,6 +236,7 @@ function Hero() {
                 width={70}
                 height={70}
                 alt="office"
+                sizes="100vw"
                 className="rounded-full"
               />
               <span className="absolute top-[40px] right-[40px] bg-[#DAE5EA] rounded-full p-1 transform ">

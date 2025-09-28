@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { CustomEase } from "gsap/CustomEase";
-
+import Image from "next/image";
 gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
 import { PiQuestionMarkThin } from "react-icons/pi";
 import { PiPhoneCallLight } from "react-icons/pi";
@@ -190,11 +190,13 @@ function Build() {
       >
         <div className="absolute inset-0 lg:hidden">
           <div className="w-full h-full overflow-hidden rounded-t-4xl">
-            <img
+            <Image
               src="/assets/images/marina.jpg"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: `28%` }}
               alt="hero_img"
+              fill
+              sizes="100vw"
+              className="w-full h-full object-cover"
+              style={{ objectPosition: "28%" }}
             />
           </div>
         </div>
@@ -209,9 +211,13 @@ function Build() {
               <div className="images">
                 {teamMembers.map((e, i) => {
                   return (
-                    <img
+                    <Image
                       key={i}
                       src={e}
+                      alt={`team-member-${i}`}
+                      width={48}
+                      height={48}
+                      sizes="100vw"
                       className="animated-img rounded-full w-12 h-12 absolute"
                       style={{ left: `${i * 30}px` }}
                     />
@@ -268,12 +274,13 @@ function Build() {
         </div>
         <div className="right rounded-4xl overflow-hidden flex-1 relative p-8 max-lg:hidden">
           <div className="absolute inset-0 -z-10">
-            <img
+            <Image
               ref={heroImage}
               src="/assets/images/marina.jpg"
-              className="w-full h-full object-cover"
-              style={{ objectPosition: `28%` }}
               alt="hero_img"
+              fill
+              className="w-full h-full object-cover"
+              style={{ objectPosition: "28%" }}
             />
           </div>
           <div className="data flex flex-col justify-between h-full">
@@ -317,10 +324,13 @@ function Build() {
                 >
                   <div className="image relative">
                     <span className="w-4 h-4 rounded-full bg-white absolute top-0 right-[2px] border-black border-4"></span>
-                    <img
+                    <Image
                       src="/assets/images/expert.jpg"
                       alt="expert"
-                      className="w-16 h-16 rounded-full"
+                      width={64}
+                      height={64}
+                      sizes="100vw"
+                      className="rounded-full"
                     />
                   </div>
                   <div className="data">

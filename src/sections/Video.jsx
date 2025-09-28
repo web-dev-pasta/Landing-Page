@@ -109,10 +109,10 @@ function Video() {
       <div className="video w-full h-full relative z-10 pointer-events-none">
         <video
           id="test"
-          // autoPlay
-          // muted
-          // loop
-          // playsInline
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-screen h-screen object-cover -z-10 pointer-events-none"
           ref={video}
           style={{
@@ -120,7 +120,7 @@ function Video() {
             clipPath: "inset(30% round var(--radius))",
           }}
         >
-          <source src="/assets/videos/hero.mp4" type="video/mp4" />
+          <source src="/assets/videos/hero-small.mp4" type="video/mp4" />
           Your Browser Does Not Support This Vdieo
         </video>
         <div className="absolute top-1/2 left-1/2 transform -translate-1/2 z-10">
