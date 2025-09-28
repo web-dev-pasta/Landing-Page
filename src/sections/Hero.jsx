@@ -33,7 +33,6 @@ function Hero() {
     "Investing",
   ];
   const secondAnimatedTextLines = useRef(null);
-  const icons = [{ label: <TfiBook /> }, { label: <TfiAlignRight /> }];
   const secondHeaderIcons = [
     { label: <CiHeart className="text-2xl" />, fill: false },
     { label: <GrHomeRounded className="text-black" />, fill: true },
@@ -144,7 +143,7 @@ function Hero() {
           className="[mask-image:linear-gradient(to_bottom,rgba(0,0,0,1),rgba(0,0,0,0))] [mask-repeat:no-repeat] [mask-size:100%_110%] object-cover"
         />
       </div>
-      <div className="left flex-1 flex flex-col justify-between p-5 ">
+      <div className="left flex-1 flex flex-col justify-between p-5 relative">
         <header className="flex justify-between items-center">
           <div
             className="logo"
@@ -158,20 +157,19 @@ function Hero() {
               height={50}
             />
           </div>
-          <div className="icons flex gap-5">
-            {icons.map(({ label }, i) => {
-              return (
-                <div
-                  className={`icon-${
-                    i + 1
-                  } cursor-pointer bg-[#f6f6f6a3] lg:bg-[#f6f6f6] w-fit p-2 rounded sm:text-3xl flex justify-center items-center text-2xl`}
-                  key={i}
-                  ref={(el) => (animatedIcons.current[i] = el)}
-                >
-                  {label}
-                </div>
-              );
-            })}
+          <div className="icons flex gap-5 lg:absolute right-5 top-[45px]">
+            <div
+              className={`cursor-pointer bg-[#f6f6f6a3] lg:bg-[#f6f6f6] w-fit p-2 rounded sm:text-3xl flex justify-center items-center text-2xl`}
+              ref={(el) => (animatedIcons.current[0] = el)}
+            >
+              <TfiBook />
+            </div>
+            <div
+              className={`cursor-pointer bg-[#f6f6f6a3] lg:bg-[#f6f6f6] w-fit p-2 rounded sm:text-3xl flex justify-center items-center text-2xl`}
+              ref={(el) => (animatedIcons.current[1] = el)}
+            >
+              <TfiAlignRight />
+            </div>
           </div>
         </header>
         <main className="text-center">
