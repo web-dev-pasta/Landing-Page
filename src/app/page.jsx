@@ -14,6 +14,7 @@ import Partners from "@/sections/Partners";
 import Help from "@/sections/Help";
 import HelpTablet from "@/sections/HelpTablet";
 import Footer from "@/sections/Footer";
+import Head from "next/head";
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -41,6 +42,9 @@ export default function Home() {
 
   return (
     <ReactLenis root>
+      <Head>
+        <link rel="icon" href="/assets/images/logo-discover.svg" />
+      </Head>
       <Hero />
       <Video />
       <Portfolio />

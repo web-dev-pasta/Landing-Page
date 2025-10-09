@@ -9,8 +9,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, CustomEase);
 import { PiQuestionMarkThin } from "react-icons/pi";
 import { PiPhoneCallLight } from "react-icons/pi";
 import CountUp from "@/components/count-up";
-
-import React from "react";
+import BuildImage from "../../public/assets/images/marina.jpg";
 
 function Build() {
   const heroImage = useRef(null);
@@ -191,12 +190,10 @@ function Build() {
         <div className="absolute inset-0 lg:hidden">
           <div className="w-full h-full overflow-hidden rounded-t-4xl">
             <Image
-              priority
-              src="/assets/images/marina.jpg"
+              loading="eager"
+              src={BuildImage}
               alt="hero_img"
-              fill
-              sizes="100vw"
-              className="w-full h-full object-cover"
+              className="h-full object-cover"
               style={{ objectPosition: "28%" }}
             />
           </div>
@@ -213,7 +210,7 @@ function Build() {
                 {teamMembers.map((e, i) => {
                   return (
                     <Image
-                      priority
+                      loading="eager"
                       key={i}
                       src={e}
                       alt={`team-member-${i}`}
@@ -277,7 +274,7 @@ function Build() {
         <div className="right rounded-4xl overflow-hidden flex-1 relative p-8 max-lg:hidden">
           <div className="absolute inset-0 -z-10">
             <Image
-              priority
+              loading="eager"
               ref={heroImage}
               src="/assets/images/marina.jpg"
               alt="hero_img"
@@ -328,7 +325,7 @@ function Build() {
                   <div className="image relative">
                     <span className="w-4 h-4 rounded-full bg-white absolute top-0 right-[2px] border-black border-4"></span>
                     <Image
-                      priority
+                      loading="eager"
                       src="/assets/images/expert.jpg"
                       alt="expert"
                       width={64}

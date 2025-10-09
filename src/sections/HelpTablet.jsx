@@ -55,7 +55,7 @@ function HelpTablet() {
     <section className=" bg-white px-8 py-8 flex items-center">
       <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden p-3">
         <Image
-          priority
+          loading="eager"
           ref={image}
           src="/assets/images/Help.webp"
           alt="Help"

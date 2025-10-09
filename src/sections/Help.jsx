@@ -59,7 +59,7 @@
 //             clipPath: "inset(30% round 30px)",
 //           }}
 //         >
-//           <Image priority
+//           <Image loading="eager"
 //             src="/assets/images/Help.webp"
 //             alt="Help"
 //             fill
@@ -96,7 +96,7 @@
 //         <div className="container flex mx-auto px-5 max-lg:flex-col max-lg:gap-10">
 //           <div className="left flex-1 flex flex-col justify-between">
 //             <div className="logo flex flex-col max-lg:gap-3">
-//               <Image priority
+//               <Image loading="eager"
 //                 src="/assets/images/logo.svg"
 //                 alt="logo_img"
 //                 width={140}
@@ -274,7 +274,7 @@ export default function Help() {
             style={{ clipPath: "inset(30% round 30px)" }}
           >
             <Image
-              priority
+              loading="eager"
               src="/assets/images/Help.webp"
               alt="Help"
               fill
@@ -313,7 +313,7 @@ export default function Help() {
             <div className="left flex-1 flex flex-col justify-between">
               <div className="logo flex flex-col max-lg:gap-3">
                 <Image
-                  priority
+                  loading="eager"
                   src="/assets/images/logo.svg"
                   alt="logo_img"
                   width={140}
@@ -358,7 +358,7 @@ export default function Help() {
                 </div>
                 <div className="image">
                   <Image
-                    priority
+                    loading="eager"
                     src="/assets/images/map.png"
                     alt="map"
                     width={252}
@@ -379,7 +379,7 @@ export default function Help() {
                 <div className="header flex flex-col gap-3">
                   <div className="expert flex items-center gap-3 max-sm:flex-col">
                     <Image
-                      priority
+                      loading="eager"
                       src="/assets/images/expert.jpg"
                       alt="expert"
                       width={64}

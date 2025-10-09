@@ -122,7 +122,7 @@ function Solutions() {
               <div className="text flex gap-4 items-center">
                 <div className="animated-image absolute right-[7px] z-10">
                   <Image
-                    priority
+                    loading="eager"
                     src={step.img}
                     alt={step.title}
                     width={200}

@@ -12,6 +12,8 @@ import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
 import { GrHomeRounded } from "react-icons/gr";
 import { LuDownload } from "react-icons/lu";
+import HeroImage from "../../public/assets/images/burj-al-arab.jpg";
+import bgPattern from "../../public/assets/images/bg-2.svg";
 
 function Hero() {
   const animatedIcons = useRef([]);
@@ -27,6 +29,7 @@ function Hero() {
   const contact = useRef(null);
   const contactText = useRef(null);
   const heroPattern = useRef(null);
+
   const animatedTextLines = [
     "Real Estate in Dubai",
     "Ideal for Living and",
@@ -124,25 +127,21 @@ function Hero() {
       <div className="absolute inset-0 -z-10 lg:hidden overflow-hidden">
         <Image
           priority
+          loading="eager"
           ref={heroImageMobile}
-          src="/assets/images/burj-al-arab.jpg"
+          src={HeroImage}
           alt="hero_img"
-          fill
-          sizes="100vw"
           style={{ objectPosition: "28%" }}
-          className="object-cover"
-          priority
+          className="object-cover h-full"
         />
       </div>
       <div className="absolute inset-0 -z-10 overflow-hidden max-lg:hidden">
         <Image
           priority
           ref={heroPattern}
-          src="/assets/images/bg-2.svg"
+          src={bgPattern}
           alt="hero_bg_pattern"
-          fill
-          sizes="100vw"
-          className="[mask-image:linear-gradient(to_bottom,rgba(0,0,0,1),rgba(0,0,0,0))] [mask-repeat:no-repeat] [mask-size:100%_110%] object-cover"
+          className="h-full w-full [mask-image:linear-gradient(to_bottom,rgba(0,0,0,1),rgba(0,0,0,0))] [mask-repeat:no-repeat] [mask-size:100%_110%] object-cover"
         />
       </div>
       <div className="left flex-1 flex flex-col justify-between p-5 relative">
@@ -152,7 +151,7 @@ function Hero() {
             style={{ clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)` }}
           >
             <Image
-              priority
+              loading="eager"
               ref={logo}
               src="/assets/images/logo.svg"
               alt="logo_img"
@@ -233,7 +232,7 @@ function Hero() {
             </p>
             <div className="image relative" ref={littleImage}>
               <Image
-                priority
+                loading="eager"
                 src={`/assets/images/office.jpg`}
                 width={70}
                 height={70}
@@ -253,13 +252,10 @@ function Hero() {
           <Image
             priority
             ref={heroImage}
-            src="/assets/images/burj-al-arab.jpg"
+            src={HeroImage}
             alt="hero_img"
-            fill
             style={{ objectPosition: "28%" }}
-            className="object-cover"
-            priority
-            sizes="100vw"
+            className="object-cover h-full"
           />
         </div>
         <div className="img_header text-white text-lg font-light flex justify-between items-center px-4">
