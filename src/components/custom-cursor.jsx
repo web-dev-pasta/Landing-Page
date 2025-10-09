@@ -16,7 +16,7 @@ export default function CustomCursor() {
 
   return (
     <div
-      className="custom-cursor fixed z-[999] pointer-events-none"
+      className="custom-cursor fixed z-[999] pointer-events-none max-md:hidden"
       style={{
         top: 0,
         left: 0,
