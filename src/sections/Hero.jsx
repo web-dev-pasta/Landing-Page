@@ -15,7 +15,7 @@ import { LuDownload } from "react-icons/lu";
 import HeroImage from "../../public/assets/images/burj-al-arab.jpg";
 import bgPattern from "../../public/assets/images/bg-2.svg";
 
-function Hero() {
+function Hero({ isLoading }) {
   const animatedIcons = useRef([]);
   const secondAnimatedIcons = useRef([]);
   const animatedTextLinesRefs = useRef([]);
@@ -42,84 +42,86 @@ function Hero() {
   ];
 
   useGSAP(() => {
-    gsap.set(contact.current, {
-      clipPath: `inset(0 75% 0 0 round 0 50px 50px 0)`,
-    });
-    gsap.from(
-      [
-        download.current,
-        animatedIcons.current,
-        secondAnimatedIcons.current,
-        littleImage.current,
-        contact.current,
-      ],
-      {
-        opacity: 0.2,
-        scale: 0,
+    if (!isLoading) {
+      gsap.set(contact.current, {
+        clipPath: `inset(0 75% 0 0 round 0 50px 50px 0)`,
+      });
+      gsap.from(
+        [
+          download.current,
+          animatedIcons.current,
+          secondAnimatedIcons.current,
+          littleImage.current,
+          contact.current,
+        ],
+        {
+          opacity: 0.2,
+          scale: 0,
+          duration: 2,
+          ease: "power3.out",
+        }
+      );
+      gsap.from(logo.current, {
+        opacity: 0,
+        y: 100,
         duration: 2,
         ease: "power3.out",
-      }
-    );
-    gsap.from(logo.current, {
-      opacity: 0,
-      y: 100,
-      duration: 2,
-      ease: "power3.out",
-    });
-    gsap.from(animatedTextLinesRefs.current, {
-      opacity: 0,
-      y: 100,
-      duration: 2,
-      ease: "power3.out",
-      scale: 0.85,
-    });
-    gsap.from(".styled-span", {
-      opacity: 0,
-      y: 50,
-      duration: 2,
-      ease: "power3.out",
-      scale: 0.85,
-    });
-    gsap.from(animtedLittleHeader.current, {
-      opacity: 0,
-      delay: 0.5,
-      y: -10,
-      duration: 0.5,
-    });
-    gsap.from(heroImage.current, {
-      opacity: 0.5,
-      scale: 1.15,
-      duration: 2,
-    });
-    gsap.from(littleImageText.current, {
-      delay: 0.4,
-      duration: 1,
-      opacity: 0,
-      x: -20,
-    });
-    gsap.from(contactText.current, {
-      delay: 1.5,
-      duration: 1,
-      opacity: 0,
-      scale: 0.95,
-    });
-    gsap.from(secondAnimatedTextLines.current, {
-      duration: 1,
-      opacity: 0,
-      scale: 0.95,
-      y: 20,
-    });
-    gsap.from([heroImageMobile.current, heroPattern.current], {
-      opacity: 0.5,
-      scale: 1.15,
-      duration: 2,
-    });
-    gsap.to(contact.current, {
-      clipPath: `inset(0 0% 0 0 round 0 50px 50px 0)`,
-      delay: 1,
-      duration: 2,
-      ease: "power3.out",
-    });
+      });
+      gsap.from(animatedTextLinesRefs.current, {
+        opacity: 0,
+        y: 100,
+        duration: 2,
+        ease: "power3.out",
+        scale: 0.85,
+      });
+      gsap.from(".styled-span", {
+        opacity: 0,
+        y: 50,
+        duration: 2,
+        ease: "power3.out",
+        scale: 0.85,
+      });
+      gsap.from(animtedLittleHeader.current, {
+        opacity: 0,
+        delay: 0.5,
+        y: -10,
+        duration: 0.5,
+      });
+      gsap.from(heroImage.current, {
+        opacity: 0.5,
+        scale: 1.15,
+        duration: 2,
+      });
+      gsap.from(littleImageText.current, {
+        delay: 0.4,
+        duration: 1,
+        opacity: 0,
+        x: -20,
+      });
+      gsap.from(contactText.current, {
+        delay: 1.5,
+        duration: 1,
+        opacity: 0,
+        scale: 0.95,
+      });
+      gsap.from(secondAnimatedTextLines.current, {
+        duration: 1,
+        opacity: 0,
+        scale: 0.95,
+        y: 20,
+      });
+      gsap.from([heroImageMobile.current, heroPattern.current], {
+        opacity: 0.5,
+        scale: 1.15,
+        duration: 2,
+      });
+      gsap.to(contact.current, {
+        clipPath: `inset(0 0% 0 0 round 0 50px 50px 0)`,
+        delay: 1,
+        duration: 2,
+        ease: "power3.out",
+      });
+    }
   });
 
   return (

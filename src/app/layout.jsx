@@ -56,7 +56,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${helvetica.variable} ${montserrat.variable}`}>
-        <CustomCursor />
         {children}
       </body>
     </html>

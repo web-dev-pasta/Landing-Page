@@ -15,6 +15,7 @@ import Help from "@/sections/Help";
 import HelpTablet from "@/sections/HelpTablet";
 import Footer from "@/sections/Footer";
 import Head from "next/head";
+import CustomCursor from "@/components/custom-cursor";
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -45,6 +46,8 @@ export default function Home() {
       <Head>
         <link rel="icon" href="/assets/images/logo-discover.svg" />
       </Head>
+      {mounted && <CustomCursor />}
+
       <Hero />
       <Video />
       <Portfolio />
