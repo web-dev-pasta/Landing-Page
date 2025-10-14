@@ -56,3 +56,9 @@ img {
     font-family: var(--font-montserrat), var(--font-helvetica), sans-serif !important;
   }
 }
+
+/* === Custom === */
+
+.pin-spacer {
+  background-color: #232323 !important;
+}
