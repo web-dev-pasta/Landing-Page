@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -6,8 +6,11 @@ import { HiOutlineKey } from "react-icons/hi";
 import { TbHome2 } from "react-icons/tb";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 import ScrollVelocity from "@/components/scroll-velocity";
+import { useDispatch } from "react-redux";
+import { setLoading } from "@/redux/features/data/dataSlice";
 
 function Video() {
+  const dispatch = useDispatch();
   const videoSection = useRef(null);
   const video = useRef(null);
   const iconRefs = useRef([]);
@@ -109,6 +112,7 @@ function Video() {
       <div className="video w-full h-full relative z-10 pointer-events-none">
         <video
           id="test"
+          preload="auto"
           autoPlay
           muted
           loop
@@ -119,6 +123,7 @@ function Video() {
             "--radius": "30px",
             clipPath: "inset(30% round var(--radius))",
           }}
+          onLoadedData={() => dispatch(setLoading(false))}
         >
           <source src="/assets/videos/hero-small.mp4" type="video/mp4" />
           Your Browser Does Not Support This Vdieo

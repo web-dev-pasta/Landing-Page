@@ -10,8 +10,10 @@ import { PiQuestionMarkThin } from "react-icons/pi";
 import { PiPhoneCallLight } from "react-icons/pi";
 import CountUp from "@/components/count-up";
 import BuildImage from "../../public/assets/images/marina.jpg";
+import { useSelector } from "react-redux";
 
 function Build() {
+  const loading = useSelector((state) => state.loading.loading);
   const heroImage = useRef(null);
   const contact = useRef(null);
   const contactText = useRef(null);

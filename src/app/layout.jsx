@@ -1,7 +1,6 @@
-import CustomCursor from "@/components/custom-cursor";
 import "./globals.css";
 import localFont from "next/font/local";
-
+import Providers from "./providers";
 export const metadata = {
   title: "Tower Landing Page",
   description:
@@ -56,7 +55,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${helvetica.variable} ${montserrat.variable}`}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

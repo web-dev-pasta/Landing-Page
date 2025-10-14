@@ -5,7 +5,6 @@
     Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   outline: none;
-  /* cursor: url("/assets/images/cursor.png") 14 14, auto; */
   cursor: none !important;
 }
 

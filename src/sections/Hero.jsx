@@ -14,8 +14,9 @@ import { GrHomeRounded } from "react-icons/gr";
 import { LuDownload } from "react-icons/lu";
 import HeroImage from "../../public/assets/images/burj-al-arab.jpg";
 import bgPattern from "../../public/assets/images/bg-2.svg";
+import { useSelector } from "react-redux";
 
-function Hero({ isLoading }) {
+function Hero() {
   const animatedIcons = useRef([]);
   const secondAnimatedIcons = useRef([]);
   const animatedTextLinesRefs = useRef([]);
@@ -29,6 +30,7 @@ function Hero({ isLoading }) {
   const contact = useRef(null);
   const contactText = useRef(null);
   const heroPattern = useRef(null);
+  const loading = useSelector((state) => state.loading.loading);
 
   const animatedTextLines = [
     "Real Estate in Dubai",
@@ -42,7 +44,7 @@ function Hero({ isLoading }) {
   ];
 
   useGSAP(() => {
-    if (!isLoading) {
+    if (!loading) {
       gsap.set(contact.current, {
         clipPath: `inset(0 75% 0 0 round 0 50px 50px 0)`,
       });
@@ -122,7 +124,7 @@ function Hero({ isLoading }) {
         ease: "power3.out",
       });
     }
-  });
+  }, [loading]);
 
   return (
     <section className="min-h-screen flex p-2 relative">

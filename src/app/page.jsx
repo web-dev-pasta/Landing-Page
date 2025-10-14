@@ -16,6 +16,7 @@ import HelpTablet from "@/sections/HelpTablet";
 import Footer from "@/sections/Footer";
 import Head from "next/head";
 import CustomCursor from "@/components/custom-cursor";
+import { useSelector } from "react-redux";
 
 function useMediaQuery(query) {
   const [matches, setMatches] = useState(false);
@@ -31,6 +32,7 @@ function useMediaQuery(query) {
 }
 
 export default function Home() {
+  const loading = useSelector((state) => state.loading.loading);
   const [mounted, setMounted] = useState(false);
   const isTablet = useMediaQuery("(max-width: 1300px)");
   const isTabletHero = useMediaQuery("(max-width: 1024px)");
@@ -47,7 +49,15 @@ export default function Home() {
         <link rel="icon" href="/assets/images/logo-discover.svg" />
       </Head>
       {mounted && <CustomCursor />}
-
+      <div
+        className={`fixed inset-0 bg-white flex items-center justify-center z-[9999] transition-opacity duration-700 ${
+          loading
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        <p className="animate-pulse text-black font-semibold">Loading...</p>
+      </div>
       <Hero />
       <Video />
       <Portfolio />
