@@ -39,6 +39,13 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
   }, []);
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [loading]);
   if (!mounted) {
     return null;
   }
@@ -50,7 +57,7 @@ export default function Home() {
       </Head>
       {mounted && <CustomCursor />}
       <div
-        className={`fixed inset-0 bg-white flex items-center justify-center z-[9999] transition-opacity duration-700 ${
+        className={`fixed min-h-[100dvh] w-full bg-white flex items-center justify-center z-[9999] transition-opacity duration-700 ${
           loading
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
