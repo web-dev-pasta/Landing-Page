@@ -171,9 +171,7 @@ function Stands() {
             <div className="image text-[25px] flex max-md:justify-center">
               {item.icon}
             </div>
-            <p className="text-2xl my-3 max-md:text-center">
-              {item.title}
-            </p>
+            <p className="text-2xl my-3 max-md:text-center">{item.title}</p>
             <p className="text-[15px] text-gray-500 max-w-[300px] leading-relaxed max-md:text-center max-md:mx-auto">
               {item.desc}
             </p>

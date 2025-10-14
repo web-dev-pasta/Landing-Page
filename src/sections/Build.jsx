@@ -200,9 +200,9 @@ function Build() {
             />
           </div>
         </div>
-        <div className="left flex-1 flex flex-col justify-between">
+        <div className="left flex-1 flex flex-col max-lg:justify-evenly justify-between">
           <div className="top flex flex-col gap-[80px] max-sm:items-center">
-            <p className="lg:text-gray-400 max-w-[300px] leading-relaxed text-white">
+            <p className="lg:text-gray-400 max-w-[300px] leading-relaxed text-white max-lg:hidden">
               At Golden Gate Properties, we offer more than just real estate
               services, we provide an unparalleled experience tailored to meet
               your needs and exceed your expectaions.

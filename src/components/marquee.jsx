@@ -35,7 +35,7 @@ export default function InfiniteMarquee() {
     <section className="flex flex-col justify-center overflow-hidden">
       <div className="ticker p-[1vw] whitespace-nowrap" data-duration="15">
         <div className="ticker-wrap flex gap-[20px]">
-          <div className="ticker-text text-black font-light tracking-[-0.02em] text-[clamp(30px,50px,80px)] flex gap-5">
+          <div className="ticker-text text-black font-light tracking-[-0.02em] text-[clamp(30px,50px,80px)] flex gap-5 max-sm:text-[30px]">
             {spanContent.map((e, i) => {
               return (
                 <span

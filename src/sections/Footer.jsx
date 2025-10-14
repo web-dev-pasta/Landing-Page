@@ -15,7 +15,7 @@ function Footer() {
   return (
     <section
       ref={section}
-      className="relative min-h-screen bg-[#F7F6F1] px-8 py-10 lg:py-20 flex -z-10"
+      className="relative min-h-screen bg-[#F7F6F1] px-8 py-10 lg:py-20 flex"
     >
       <div className="container flex mx-auto px-5 max-lg:flex-col max-lg:gap-10">
         <div className="left flex-1 flex flex-col justify-between">
