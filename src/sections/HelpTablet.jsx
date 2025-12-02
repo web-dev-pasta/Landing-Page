@@ -57,10 +57,9 @@ function HelpTablet() {
         <Image
           loading="eager"
           ref={image}
-          src="/assets/images/Help.webp"
+          src="/assets/images/help.webp"
           alt="Help"
           fill
-          sizes="100vw"
           className="object-cover"
         />
         <div className="text flex flex-col gap-4">

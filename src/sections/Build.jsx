@@ -13,7 +13,6 @@ import BuildImage from "../../public/assets/images/marina.jpg";
 import { useSelector } from "react-redux";
 
 function Build() {
-  const loading = useSelector((state) => state.loading.loading);
   const heroImage = useRef(null);
   const contact = useRef(null);
   const contactText = useRef(null);
@@ -66,6 +65,7 @@ function Build() {
     gsap.set(contact.current, {
       clipPath: `inset(0 75% 0 0 round 0 50px 50px 0)`,
     });
+
     gsap.from(heroImage.current, {
       scale: 1.15,
       duration: 2,
@@ -74,28 +74,50 @@ function Build() {
         start: "top bottom",
       },
     });
-    gsap.from(contactText.current, {
-      delay: 1.5,
-      duration: 1,
-      opacity: 0,
-      scale: 0.95,
+    // gsap.from(contactText.current, {
+    //   delay: 1.5,
+    //   duration: 1,
+    //   opacity: 0,
+    //   scale: 0.95,
+    //   scrollTrigger: {
+    //     trigger: section.current,
+    //     start: "top bottom",
+    //   },
+    // });
+    const contactTl = gsap.timeline({
       scrollTrigger: {
-        trigger: section.current,
+        trigger: contact.current,
         start: "top bottom",
       },
     });
-    gsap.to(contact.current, {
-      clipPath: `inset(0 0% 0 0 round 0 50px 50px 0)`,
-      delay: 1,
-      duration: 2,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: section.current,
-        start: "top bottom",
-      },
-    });
+    contactTl
+      .from(contact.current, {
+        opacity: 0.2,
+        scale: 0,
+        duration: 2,
+        ease: "power3.out",
+      })
+      .to(
+        contact.current,
+        {
+          clipPath: `inset(0 0% 0 0 round 0 50px 50px 0)`,
+          duration: 2,
+          ease: "power3.out",
+        },
+        "-=1"
+      )
+      .from(
+        contactText.current,
+        {
+          delay: 0.3,
+          duration: 1,
+          opacity: 0,
+          scale: 0.95,
+        },
+        "<"
+      );
 
-    gsap.from([contact.current, question.current, expert.current], {
+    gsap.from([question.current, expert.current], {
       opacity: 0.2,
       scale: 0,
       duration: 2,
@@ -105,6 +127,16 @@ function Build() {
         start: "top center",
       },
     });
+    // gsap.to(contact.current, {
+    //   clipPath: `inset(0 0% 0 0 round 0 50px 50px 0)`,
+    //   delay: 2,
+    //   duration: 1,
+    //   ease: "power3.out",
+    //   scrollTrigger: {
+    //     trigger: section.current,
+    //     start: "top bottom",
+    //   },
+    // });
     gsap.from([".animated-span", build.current], {
       y: 100,
       duration: 2,
@@ -218,7 +250,6 @@ function Build() {
                       alt={`team-member-${i}`}
                       width={48}
                       height={48}
-                      sizes="100vw"
                       className="animated-img rounded-full w-12 h-12 absolute"
                       style={{ left: `${i * 30}px` }}
                     />
@@ -332,7 +363,6 @@ function Build() {
                       alt="expert"
                       width={64}
                       height={64}
-                      sizes="100vw"
                       className="rounded-full"
                     />
                   </div>

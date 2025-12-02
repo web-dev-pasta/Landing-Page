@@ -112,7 +112,7 @@ function Video() {
       <div className="video w-full h-full relative z-10 pointer-events-none">
         <video
           id="test"
-          preload="auto"
+          preload="none"
           autoPlay
           muted
           loop

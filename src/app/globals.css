@@ -15,9 +15,7 @@ body {
 /* === Reset === */
 
 img {
-  display: block;
   user-select: none;
-  max-width: 100%;
 }
 
 /* === Utilities === */
@@ -58,5 +56,3 @@ img {
 }
 
 /* === Custom === */
-
-

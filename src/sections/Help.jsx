@@ -275,10 +275,9 @@ export default function Help() {
           >
             <Image
               loading="eager"
-              src="/assets/images/Help.webp"
+              src="/assets/images/help.webp"
               alt="Help"
               fill
-              sizes="100vw"
               className="object-cover -z-10"
             />
             <div className="text flex flex-col gap-8">
@@ -363,7 +362,6 @@ export default function Help() {
                     alt="map"
                     width={252}
                     height={252}
-                    sizes="100vw"
                     className="rounded-xl"
                   />
 
@@ -384,7 +382,6 @@ export default function Help() {
                       alt="expert"
                       width={64}
                       height={64}
-                      sizes="100vw"
                       className="rounded-full"
                     />
                     <div className="text max-sm:text-center">

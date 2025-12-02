@@ -11,7 +11,6 @@ gsap.registerPlugin(ScrollTrigger);
 function Footer() {
   const logo = useRef(null);
   const section = useRef(null);
-  useGSAP(() => {}, []);
   return (
     <section
       ref={section}
@@ -71,7 +70,6 @@ function Footer() {
                 alt="map"
                 width={252}
                 height={252}
-                sizes="100vw"
                 className="rounded-xl"
               />
               <div className="text mt-4 flex flex-col gap-2 max-sm:text-center">
@@ -90,7 +88,6 @@ function Footer() {
                   alt="expert"
                   width={64}
                   height={64}
-                  sizes="100vw"
                   className="rounded-full"
                 />
                 <div className="text max-sm:text-center">

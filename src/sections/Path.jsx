@@ -50,7 +50,6 @@ function Path() {
       },
     });
     gsap.set(".p-smart", {
-      y: 230,
       opacity: 0,
     });
     const initialTl = gsap.timeline({
@@ -268,7 +267,7 @@ function Path() {
       >
         <span className="path-span inline-block">Path to Smart Ownership</span>
       </p>
-      <p className="text-center p-smart font-light">
+      <p className="text-center p-smart font-light absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         Smart
         <br />
         Ownership

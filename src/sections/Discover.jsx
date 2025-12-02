@@ -94,7 +94,7 @@ function Discover() {
     "area-one": ["/assets/images/build-1.jpg", "/assets/images/build-2.jpg"],
     "area-two": [
       "/assets/images/build-3.jpg",
-      "/assets/images/bulid-4.jpg",
+      "/assets/images/build-4.jpg",
       "/assets/images/build-5.jpg",
     ],
     "area-three": [
